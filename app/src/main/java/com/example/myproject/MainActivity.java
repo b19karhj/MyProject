@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        adapter=new ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildings);
+        adapter=new ArrayAdapter<Building>(this, R.layout.text_view,R.id.list_View,buildings);
         ListView my_listview = findViewById(R.id.list_View);
         my_listview.setAdapter(adapter);
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
