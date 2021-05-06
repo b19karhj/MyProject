@@ -6,9 +6,11 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -42,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildings);
+        adapter=new ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildings );
+
         ListView my_listview=(ListView) findViewById(R.id.list_View);
         my_listview.setAdapter(adapter);
-        my_listview.setOnItemClickListener();
+
 
 
 
