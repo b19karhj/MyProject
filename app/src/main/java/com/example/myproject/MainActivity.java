@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showExternalWebPage(int index){
-        myWebView.loadUrl(buildings[index].getAuxdata().getWiki();
+        myWebView.loadUrl(buildings[index].getAuxdata().getWiki());
 
     }
 
