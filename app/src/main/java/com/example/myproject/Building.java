@@ -8,6 +8,7 @@ List for the different type of data
  type = login
  company = country
  location = city
+ category = category
  size = height
  cost = floors
 
@@ -24,6 +25,7 @@ public class Building {
     private String type;
     private String company;
     private String location;
+    private String category;
     private int size;
     private int cost;
     private Auxdata auxdata;
