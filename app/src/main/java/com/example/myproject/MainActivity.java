@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String json) {
             Log.d("Buildings ==>", json);
             Gson gson = new Gson();
+            buildings = gson.fromJson(json,Building[].class);
         }
     }
 }
