@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Building> buildingArrayList=new ArrayList();
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
+    private ListView listView;
 
 
 
@@ -53,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
 
         adapter=new ArrayAdapter<Building>(this, R.layout.text_view,R.id.list_View,buildings);
-        ListView my_listview = findViewById(R.id.list_View);
-        my_listview.setAdapter(adapter);
-        my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView = findViewById(R.id.list_View);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -111,8 +112,9 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String json) {
             Log.d("AsyncTask ==>",json);
             Gson gson = new Gson();
-            buildings = gson.fromJson(json,Building[].class);
-            adapter = new ArrayAdapter<>(MainActivity.this,R.layout.text_view,buildings);
+            Building[] newBuildings = gson.fromJson(json,Building[].class);
+            adapter = new ArrayAdapter<>(MainActivity.this,R.layout.text_view,newBuildings);
+            listView.setAdapter(adapter);
             for (int i = 0; i < buildings.length; i++) {
                 Log.d("MainActivity ==>", "Find buildings: " + buildings[i]);
             }
