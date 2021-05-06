@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        ListView my_listview=(ListView) findViewById(R.id.list_View);  //Hämtar min listView från activitymain.
-        my_listview.setAdapter(adapter); //Sätter min listview till adapter.
+        ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildings);
+        ListView my_listview=(ListView) findViewById(R.id.list_View);
+        my_listview.setAdapter(adapter);
 
 
 
