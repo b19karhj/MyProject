@@ -9,6 +9,7 @@ import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ArrayAdapter;
 
 import com.google.gson.Gson;
 
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     private WebView myWebView;
     private Building[] buildings;
+    private ArrayAdapter<Building> adapter;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         myWebView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+
 
 
     }
