@@ -3,6 +3,7 @@ package com.example.myproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private WebView myWebView;
+    //private WebView myWebView;
     public ArrayList<Building> buildingArrayList=new ArrayList();
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
@@ -48,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildingArrayList);
 
-       ListView my_listview = (ListView) findViewById(R.id.list_View);
-       my_listview.setAdapter(adapter);
-       my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView listView = (ListView) findViewById(R.id.list_View);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -107,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Buildings ==>", json);
             Gson gson = new Gson();
             buildings = gson.fromJson(json,Building[].class);
+            adapter = new ArrayAdapter<Building>(MainActivity.this,R.layout.text_view);
+
 
             for (int i = 0; i < buildings.length; i++) {
                 Log.d("MainActivity ==>", "Find buildings: "+buildings[i]);
