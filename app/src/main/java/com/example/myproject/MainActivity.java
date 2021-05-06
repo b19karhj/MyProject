@@ -10,6 +10,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.gson.Gson;
 
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
+        ListView my_listview=(ListView) findViewById(R.id.list_View);  //Hämtar min listView från activitymain.
+        my_listview.setAdapter(adapter); //Sätter min listview till adapter.
 
 
 
