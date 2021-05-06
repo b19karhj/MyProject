@@ -23,10 +23,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private WebView myWebView;
+    public ArrayList<Building> buildingArrayList=new ArrayList();
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
 
@@ -38,24 +40,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
+
         WebView myWebView = findViewById(R.id.project_webview);
         myWebView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        adapter=new ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildings );
+        adapter = new ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildingArrayList);
 
-        ListView my_listview=(ListView) findViewById(R.id.list_View);
-        my_listview.setAdapter(adapter);
-        my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+       ListView my_listview = (ListView) findViewById(R.id.list_View);
+       my_listview.setAdapter(adapter);
+       my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            }
-        });
+           }
+       });
 
-
+        new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
 
 
     }
