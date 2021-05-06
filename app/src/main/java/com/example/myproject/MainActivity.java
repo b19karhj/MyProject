@@ -21,6 +21,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
 
     private WebView myWebView;
+    private Building[] buildings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
