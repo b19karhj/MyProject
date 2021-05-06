@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private WebView myWebView;
+    private WebView myWebView;
     ArrayList<Building> buildingArrayList=new ArrayList();
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
 
         new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
 
+
+    }
+
+    public void showExternalWebPage(int index){
+        // TODO: Add your code for showing external web page here
+        myWebView.loadUrl(buildings[index].getAuxdata().getWiki());
 
     }
 

@@ -32,6 +32,9 @@ public class Building {
 
 
 
+    public Auxdata getAuxdata() {
+        return auxdata;
+    }
 
     @Override
     public String toString() {
