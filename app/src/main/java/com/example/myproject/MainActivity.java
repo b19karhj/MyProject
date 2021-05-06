@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                showExternalWebPage(position);
             }
         });
 
@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showExternalWebPage(int index){
-        // TODO: Add your code for showing external web page here
-        myWebView.loadUrl(buildings[index].getAuxdata().getWiki());
+        myWebView.loadUrl(buildings[index].getAuxdata().getWiki();
 
     }
 
