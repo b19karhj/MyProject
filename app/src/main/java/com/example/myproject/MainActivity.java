@@ -14,8 +14,13 @@ import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,7 +34,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     //private WebView myWebView;
-    public ArrayList<Building> buildingArrayList=new ArrayList();
+    ArrayList<Building> buildingArrayList=new ArrayList();
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
 
@@ -47,16 +52,15 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        adapter = new ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildingArrayList);
+        adapter=new ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildings);
+        ListView my_listview = findViewById(R.id.list_View);
+        my_listview.setAdapter(adapter);
+        my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        ListView listView = (ListView) findViewById(R.id.list_View);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-           @Override
-           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-           }
-       });
+            }
+        });
 
         new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
 
@@ -105,15 +109,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String json) {
-            Log.d("Buildings ==>", json);
+            Log.d("AsyncTask ==>",json);
             Gson gson = new Gson();
             buildings = gson.fromJson(json,Building[].class);
-            adapter = new ArrayAdapter<Building>(MainActivity.this,R.layout.text_view);
-
-
+            adapter = new ArrayAdapter<>(MainActivity.this,R.layout.text_view,buildings);
             for (int i = 0; i < buildings.length; i++) {
-                Log.d("MainActivity ==>", "Find buildings: "+buildings[i]);
-
+                Log.d("MainActivity ==>", "Find buildings: " + buildings[i]);
             }
         }
     }

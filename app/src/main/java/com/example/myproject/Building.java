@@ -30,9 +30,15 @@ public class Building {
     private int cost;
     private Auxdata auxdata;
 
+
+
+
     @Override
     public String toString() {
         return name;
     }
+
+
+
 
 }

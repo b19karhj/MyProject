@@ -19,7 +19,7 @@
     <WebView
         android:id="@+id/project_webview"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
