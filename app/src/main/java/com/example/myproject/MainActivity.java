@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private WebView myWebView;
+    private WebView WebView;
     ArrayList<Building> buildingArrayList=new ArrayList();
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        WebView myWebView = findViewById(R.id.project_webview);
-        myWebView.setWebViewClient(new WebViewClient());
-        WebSettings webSettings = myWebView.getSettings();
+        WebView = findViewById(R.id.project_webview);
+        WebView.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = WebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
         adapter=new ArrayAdapter<>(this, R.layout.text_view);
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showExternalWebPage(int index){
-        myWebView.loadUrl(buildings[index].getAuxdata().getWiki());
+        WebView.loadUrl(buildings[index].getAuxdata().getWiki());
 
     }
 
