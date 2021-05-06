@@ -13,8 +13,7 @@ List for the different type of data
  cost = floors
 
  auxdata:
- wiki
- img
+ wiki = img
  */
 
 
