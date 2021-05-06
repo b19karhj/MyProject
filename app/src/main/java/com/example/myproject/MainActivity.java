@@ -82,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Buildings ==>", json);
             Gson gson = new Gson();
             buildings = gson.fromJson(json,Building[].class);
+
+            for (int i = 0; i < buildings.length; i++) {
+                Log.d("MainActivity ==>", "Find buildings: "+buildings[i]);
+
+            }
         }
     }
 }
