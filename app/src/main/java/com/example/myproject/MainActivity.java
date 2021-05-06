@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<Building>(this, R.layout.text_view,R.id.textView,buildings);
         ListView my_listview=(ListView) findViewById(R.id.list_View);
         my_listview.setAdapter(adapter);
+        my_listview.setOnItemClickListener();
+
 
 
 
