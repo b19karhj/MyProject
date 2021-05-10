@@ -39,7 +39,17 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:id="@+id/url_img"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toEndOf="match_parent"
+        app:layout_constraintRight_toRightOf="match_parent"
+        app:layout_constraintLeft_toLeftOf="match_parent"
+        app:layout_constraintTop_toBottomOf="match_parent"
+        android:contentDescription="Show wiki img"
 
+        />
 
 
 
