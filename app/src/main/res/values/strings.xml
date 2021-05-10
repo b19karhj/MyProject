@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyProject</string>
+    <string name="show_img">Show wiki img</string>
 </resources>

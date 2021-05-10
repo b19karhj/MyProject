@@ -14,6 +14,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
             Snackbar.make(findViewById(android.R.id.content),buildingArrayList.get(position).info(), Snackbar.LENGTH_LONG).show();
 
-            showExternalWebPage(position);
+            showImageView(position);
         });
 
         new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void showImageView(int index){
+        ImageView imageView = findViewById(R.id.url_img);
         Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(imageView);
     }
 
