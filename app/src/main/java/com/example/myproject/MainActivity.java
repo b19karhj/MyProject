@@ -56,12 +56,7 @@ public class MainActivity extends AppCompatActivity {
         adapter=new ArrayAdapter<>(this, R.layout.text_view);
         listView = findViewById(R.id.list_View);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                showExternalWebPage(position);
-            }
-        });
+        listView.setOnItemClickListener((parent, view, position, id) -> showExternalWebPage(position));
 
         new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
 
