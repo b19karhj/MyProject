@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
         listView.setOnItemClickListener((parent, view, position, id) -> {
 
-            Toast.makeText(getApplicationContext(), buildingArrayList.get(position).info(),Toast.LENGTH_LONG).show();
+
+
+            Snackbar.make(findViewById(android.R.id.content),buildingArrayList.get(position).info(), Snackbar.LENGTH_LONG).show();
             showExternalWebPage(position);
         });
 
