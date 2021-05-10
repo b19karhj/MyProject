@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/url_img"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:contentDescription="@string/show_img"
-        tools:ignore="MissingConstraints" />
-
     <ListView
         android:id="@+id/list_View"
         android:layout_width="match_parent"
@@ -37,9 +29,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
-
+    <WebView
+        android:id="@+id/project_webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
 
