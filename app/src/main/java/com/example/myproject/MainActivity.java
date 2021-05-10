@@ -53,10 +53,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        WebView = findViewById(R.id.project_webview);
-        WebView.setWebViewClient(new WebViewClient());
-        WebSettings webSettings = WebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+
+
 
         adapter=new ArrayAdapter<>(this, R.layout.text_view);
         listView = findViewById(R.id.list_View);
