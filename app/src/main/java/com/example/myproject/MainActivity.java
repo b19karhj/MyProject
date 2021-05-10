@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -75,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    public void showImageView(int index){
+        Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(imageView);
+    }
 
     public void showExternalWebPage(int index){
         WebView.loadUrl(buildings[index].getAuxdata().getWiki());
