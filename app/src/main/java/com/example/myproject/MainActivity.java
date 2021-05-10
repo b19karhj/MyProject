@@ -82,10 +82,7 @@ public class MainActivity extends AppCompatActivity {
         Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(imageView);
     }
 
-    public void showExternalWebPage(int index){
-        WebView.loadUrl(buildings[index].getAuxdata().getWiki());
 
-    }
 
 
 
