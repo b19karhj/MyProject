@@ -56,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
         adapter=new ArrayAdapter<>(this, R.layout.text_view);
         listView = findViewById(R.id.list_View);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener((parent, view, position, id) -> showExternalWebPage(position));
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Toast.makeText(getApplicationContext(), buildingArrayList.get(position).info(),Toast.LENGTH_LONG).show();
+            showExternalWebPage(position);
+        });
 
         new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
 
@@ -117,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(adapter);
             for (int i = 0; i < buildings.length; i++) {
                 Log.d("MainActivity ==>", "Find buildings: " + buildings[i]);
+
+
+                buildingArrayList.add(buildings[i]);
             }
         }
     }
