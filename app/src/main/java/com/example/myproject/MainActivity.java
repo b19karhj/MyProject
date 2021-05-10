@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             Snackbar.make(findViewById(android.R.id.content),buildingArrayList.get(position).info(), Snackbar.LENGTH_LONG).show();
+
             showExternalWebPage(position);
         });
 
