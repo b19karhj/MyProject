@@ -35,6 +35,13 @@ public class Building {
         return auxdata;
     }
 
+    public String info(){
+        String tmp= name+" Is located in "+location+" "+company+" and is "+size+" meters tall and have "+cost+" floors"; //Placerar in datan i en sträng.
+        return tmp;
+    }
+
+
+
     @Override
     public String toString() {
         return name;
