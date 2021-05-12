@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private ImageView myImgView;
     private Button aboutButton;
+    private TextView myText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
         myImgView = findViewById(R.id.url_img);
 
         aboutButton = findViewById(R.id.open);
+
+
+
 
        createMethods();
     }
@@ -87,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void showImageView(int index){
 
+
         Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(myImgView);
+        myText.setText(buildings[index].getAuxdata().getCopyright());
 
     }
 
