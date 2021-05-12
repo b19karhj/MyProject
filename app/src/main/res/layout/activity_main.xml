@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
     <ImageView
         android:id="@+id/url_img"
@@ -38,9 +39,11 @@
     <Button
         android:id="@+id/open"
         android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="Open_F"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="50dp"
+        android:text="@string/open_f"
+        app:layout_constraintRight_toRightOf="match_parent"
+        app:layout_constraintTop_toBottomOf="match_parent"
+        app:layout_constraintLeft_toLeftOf="match_parent"/>
 
 
 

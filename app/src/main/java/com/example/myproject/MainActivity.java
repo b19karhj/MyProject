@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         mbtabout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                DialogFragment dialogFragment = new DialogFragment();
+                dialogFragment.show(getSupportFragmentManager(),"Myfragment");
             }
         });
 

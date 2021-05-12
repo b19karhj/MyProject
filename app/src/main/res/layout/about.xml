@@ -7,16 +7,14 @@
     tools:ignore="ExtraText">
 
 
-        <TextView
-            android:layout_width="280dp"
-            android:layout_height="280dp"
-            tools:ignore="MissingConstraints"
-            android:background="@color/purple_500"
-            android:text="Hello world!"/>
-
-
-
-
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@color/purple_500"
+        android:text="Hello world!"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="195dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

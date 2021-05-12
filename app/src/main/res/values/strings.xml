@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyProject</string>
     <string name="show_img">Show wiki img</string>
+    <string name="open_f">Open_F</string>
 </resources>
