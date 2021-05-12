@@ -28,6 +28,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView myImgView;
     private Button aboutButton;
     private TextView myText;
+    private TextView fragmenttext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         aboutButton = findViewById(R.id.open);
 
+        fragmenttext = findViewById(R.id.viewFragment);
 
         myText = findViewById(R.id.copyRightText);
 
