@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         aboutButton = findViewById(R.id.open);
 
 
+
         myText = findViewById(R.id.copyRightText);
 
        createMethods();
