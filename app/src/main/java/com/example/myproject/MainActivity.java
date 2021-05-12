@@ -38,7 +38,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private WebView WebView;
+
     ArrayList<Building> buildingArrayList=new ArrayList();
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
