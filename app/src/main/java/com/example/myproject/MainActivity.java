@@ -45,49 +45,57 @@ public class MainActivity extends AppCompatActivity {
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
     private ListView listView;
-    private Button mbtabout;
-
+    private ImageView myImgView;
+    private Button aboutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mbtabout = findViewById(R.id.open);
-
-        mbtabout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment dialogFragment = new DialogFragment();
-                dialogFragment.show(getSupportFragmentManager(),"Myfragment");
-            }
-        });
-
-
-
 
         adapter=new ArrayAdapter<>(this, R.layout.text_view);
         listView = findViewById(R.id.list_View);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener((parent, view, position, id) -> {
 
 
-            Toast.makeText(getApplicationContext(), buildingArrayList.get(position).info(),Toast.LENGTH_LONG).show();
+        myImgView = findViewById(R.id.url_img);
 
+        aboutButton = findViewById(R.id.open);
 
-            showImageView(position);
-        });
+       createMethods();
+    }
 
-        new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
-
-
+    public void createMethods(){
+        list();
+        buttons();
 
     }
 
+    public void list(){
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+
+            Toast.makeText(getApplicationContext(), buildingArrayList.get(position).info(),Toast.LENGTH_LONG).show();
+            showImageView(position);
+
+        });
+
+
+        new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b19karhj");
+    }
 
     public void showImageView(int index){
-        ImageView imageView = findViewById(R.id.url_img);
-        Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(imageView);
+
+        Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(myImgView);
+
+    }
+
+    public void buttons(){
+        aboutButton.setOnClickListener(v -> {
+            DialogFragment dialogFragment = new DialogFragment();
+            dialogFragment.show(getSupportFragmentManager(),"Myfragment");
+        });
     }
 
 

@@ -2,19 +2,25 @@ package com.example.myproject;
 /*
 auxdata:
 wiki =url to image
-CC = Copytirhgt
+copyright = copyright
 
 */
 
 public class Auxdata {
 
     private String wiki;
-    private String CC;
+    private String copyright;
+
+    public String getCopyright() {
+        return copyright;
+    }
+
+
+
+
 
     public String getWiki() {
         return wiki;
     }
-    public String copyRight() {
-        return CC;
-    }
+
 }
