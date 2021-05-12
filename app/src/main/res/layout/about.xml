@@ -11,10 +11,16 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:background="@color/purple_500"
-        android:text="Hello world!"
+        android:text="Hello! This is a site that is keeping track of the 10 tallest buildings in the world!"
         tools:ignore="MissingConstraints"
+        android:textSize="25sp"
         tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="195dp" />
+        tools:layout_editor_absoluteY="195dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:paddingTop="50dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
