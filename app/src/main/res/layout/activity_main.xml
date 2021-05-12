@@ -39,7 +39,7 @@
         android:id="@+id/open"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:text="Open F"
+        android:text="Open_F"
         tools:ignore="MissingConstraints" />
 
 

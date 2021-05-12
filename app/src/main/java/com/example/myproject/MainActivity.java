@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private Building[] buildings;
     private ArrayAdapter<Building> adapter;
     private ListView listView;
-
+    private Button mbtabout;
 
 
     @Override
@@ -51,7 +53,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mbtabout = findViewById(R.id.open);
 
+        mbtabout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
 
@@ -79,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.url_img);
         Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(imageView);
     }
-
-
 
 
 
