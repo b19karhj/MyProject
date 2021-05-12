@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView myImgView;
     private Button aboutButton;
     private TextView myText;
-    private TextView fragmenttext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         aboutButton = findViewById(R.id.open);
 
-        fragmenttext = findViewById(R.id.viewFragment);
 
         myText = findViewById(R.id.copyRightText);
 
