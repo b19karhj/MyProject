@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@color/purple_500"
+        android:background="@color/lightbrown"
         android:text="Hello! This is a site that is keeping track of the 10 tallest buildings in the world!"
         tools:ignore="MissingConstraints"
         android:textSize="25sp"
@@ -20,7 +20,7 @@
         android:paddingRight="4dp"
         android:textAlignment="center"
         android:gravity="center_horizontal"
-        android:paddingTop="50dp"/>
+        android:paddingTop="70dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
