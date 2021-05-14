@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     public void  openWeb(){
 
         webButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, WebViewFragment.class);
+            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
             intent.putExtra("name","test");
         });
     }
