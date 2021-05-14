@@ -13,6 +13,7 @@ public class WebViewActivity extends AppCompatActivity {
 
     private Button close;
     private WebView athour;
+    private WebView copyright;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,8 @@ public class WebViewActivity extends AppCompatActivity {
 
         close = findViewById(R.id.close_web);
 
-        athour = findViewById(R.id.)
+        athour = findViewById(R.id.photo);
+        copyright = findViewById(R.id.license);
 
 
         web();
