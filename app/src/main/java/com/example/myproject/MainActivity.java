@@ -1,37 +1,21 @@
 package com.example.myproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,7 +25,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,11 +50,24 @@ public class MainActivity extends AppCompatActivity {
         aboutButton = findViewById(R.id.open);
 
 
-        webButton = findViewById(R.id.open_web);
 
 
-        openWeb();
+
+
        createMethods();
+        Button button = findViewById(R.id.open_web);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MainActivity.this, WebViewActivity.class);
+
+                startActivity(intent);
+
+
+            }
+        });
+
+
     }
 
 
@@ -114,13 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void  openWeb(){
 
-        webButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-            intent.putExtra("name","test");
-        });
-    }
 
     @SuppressLint("StaticFieldLeak")
     private class JsonTask extends AsyncTask<String, String, String> {
