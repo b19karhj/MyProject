@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private ImageView myImgView;
     private Button aboutButton;
-    private TextView myText;
+
     private Button webButton;
 
 
@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_View);
         myImgView = findViewById(R.id.url_img);
         aboutButton = findViewById(R.id.open);
-        myText = findViewById(R.id.copyRightText);
+
 
         webButton = findViewById(R.id.open_web);
 
-
+        openWeb();
        createMethods();
     }
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     public void createMethods(){
         list();
         buttons();
-        openWeb();
+
 
     }
 
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Picasso.get().load(buildings[index].getAuxdata().getWiki()).into(myImgView);
-        myText.setText(buildings[index].getAuxdata().getCopyright());
+
 
     }
 
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             DialogFragment dialogFragment = new DialogFragment();
             dialogFragment.show(getSupportFragmentManager(),"Myfragment");
         });
+
     }
 
 
