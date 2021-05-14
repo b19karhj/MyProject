@@ -61,18 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void openWindow(){
-        webButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( MainActivity.this, WebViewActivity.class);
 
-                startActivity(intent);
-
-
-            }
-        });
-    }
 
     public void createMethods(){
         list();
@@ -112,6 +101,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void openWindow(){
+        webButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MainActivity.this, WebViewActivity.class);
+
+                startActivity(intent);
+
+
+            }
+        });
+    }
 
 
     @SuppressLint("StaticFieldLeak")
