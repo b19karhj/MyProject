@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private ImageView myImgView;
     private Button aboutButton;
-
     private Button webButton;
 
 
@@ -70,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         webButton = findViewById(R.id.open_web);
 
+
         openWeb();
        createMethods();
     }
@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void list(){
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
