@@ -16,7 +16,9 @@ public class WebViewActivity extends AppCompatActivity {
     private Button close;
     private WebView athour;
     private WebView copyright;
-    private WebSettings wsettings;
+    private WebSettings photosettings;
+    private WebSettings copysettings;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +33,19 @@ public class WebViewActivity extends AppCompatActivity {
 
 
 
+
         web();
+        webPages();
     }
 
-    private void webpages(){
+    private void webPages(){
         athour.setWebViewClient(new WebViewClient());
+        photosettings.setJavaScriptEnabled(true);
+        photosettings = athour.getSettings();
+
         copyright.setWebViewClient(new WebViewClient());
+        copysettings.setJavaScriptEnabled(true);
+        copysettings = athour.getSettings();
 
 
     }
