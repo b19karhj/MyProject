@@ -35,16 +35,24 @@ public class WebViewActivity extends AppCompatActivity {
 
 
         web();
-        webPages();
+
+    }
+
+    public void transfer(){
+
+    }
+    public void showExternalWebPage(int index){
+
+
     }
 
     private void webPages(){
         athour.setWebViewClient(new WebViewClient());
-        photosettings.setJavaScriptEnabled(true);
+        /*photosettings.setJavaScriptEnabled(true);*/
         photosettings = athour.getSettings();
 
         copyright.setWebViewClient(new WebViewClient());
-        copysettings.setJavaScriptEnabled(true);
+        /*copysettings.setJavaScriptEnabled(true);*/
         copysettings = athour.getSettings();
 
 
