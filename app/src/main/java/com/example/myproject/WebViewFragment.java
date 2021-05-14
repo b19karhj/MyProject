@@ -1,4 +1,7 @@
 package com.example.myproject;
 
-public class WebViewFragment {
+import androidx.appcompat.app.AppCompatActivity;
+
+
+public class WebViewFragment extends AppCompatActivity{
 }
