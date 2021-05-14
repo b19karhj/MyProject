@@ -7,6 +7,8 @@ import android.app.AlertDialog;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -60,14 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
         adapter=new ArrayAdapter<>(this, R.layout.text_view);
         listView = findViewById(R.id.list_View);
-
-
         myImgView = findViewById(R.id.url_img);
-
         aboutButton = findViewById(R.id.open);
-
-
-
         myText = findViewById(R.id.copyRightText);
 
        createMethods();
