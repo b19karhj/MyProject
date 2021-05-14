@@ -3,23 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".realWebViewFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <WebView
+        android:id="@+id/photo"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:text=""
-        android:textSize="40sp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
+        android:layout_height="310dp"
         />
+
+    <WebView
+        android:id="@+id/license"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_marginTop="310dp"/>
 
 
 
