@@ -48,15 +48,21 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_View);
         myImgView = findViewById(R.id.url_img);
         aboutButton = findViewById(R.id.open);
-
+        webButton = findViewById(R.id.open_web);
 
 
 
 
 
        createMethods();
-        Button button = findViewById(R.id.open_web);
-        button.setOnClickListener(new View.OnClickListener() {
+        openWindow();
+
+
+
+    }
+
+    private void openWindow(){
+        webButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( MainActivity.this, WebViewActivity.class);
@@ -66,11 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
-
-
 
     public void createMethods(){
         list();
