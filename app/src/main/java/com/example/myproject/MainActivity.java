@@ -74,13 +74,7 @@ public class MainActivity extends AppCompatActivity {
        createMethods();
     }
 
-    public void  openWeb(){
 
-        webButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, WebViewFragment.class);
-            intent.putExtra("hej","test");
-        });
-    }
 
     public void createMethods(){
         list();
@@ -119,7 +113,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void  openWeb(){
 
+        webButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, WebViewFragment.class);
+            intent.putExtra("hej","test");
+        });
+    }
 
     @SuppressLint("StaticFieldLeak")
     private class JsonTask extends AsyncTask<String, String, String> {
