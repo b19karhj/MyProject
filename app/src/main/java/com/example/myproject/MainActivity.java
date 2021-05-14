@@ -1,7 +1,6 @@
 package com.example.myproject;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -80,9 +79,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), buildingArrayList.get(position).info(),Toast.LENGTH_LONG).show();
             showImageView(position);
 
-            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-            intent.putExtra("testitem",buildingArrayList.get(position));
-            startActivity(intent);
+
 
         });
 

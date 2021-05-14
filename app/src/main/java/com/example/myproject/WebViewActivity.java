@@ -40,6 +40,7 @@ public class WebViewActivity extends AppCompatActivity {
 
     public void transfer(){
 
+
     }
     public void showExternalWebPage(int index){
 
