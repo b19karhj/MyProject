@@ -23,6 +23,7 @@ import android.os.Parcelable;
 
 public class Building implements Parcelable {
 
+    private final Object Auxdata;
     private String ID;
     private String name;
     private String type;
@@ -43,6 +44,7 @@ public class Building implements Parcelable {
         category = in.readString();
         size = in.readInt();
         cost = in.readInt();
+        Auxdata = in.readFloat();
     }
 
     @Override
@@ -55,6 +57,7 @@ public class Building implements Parcelable {
         dest.writeString(category);
         dest.writeInt(size);
         dest.writeInt(cost);
+        dest.writeFloat((Float) Auxdata);
     }
 
     @Override

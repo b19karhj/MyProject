@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Button webButton;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), buildingArrayList.get(position).info(),Toast.LENGTH_LONG).show();
             showImageView(position);
 
+            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+            intent.putExtra("testitem",buildingArrayList.get(position));
+            startActivity(intent);
+
         });
 
 
@@ -105,9 +110,9 @@ public class MainActivity extends AppCompatActivity {
         webButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( MainActivity.this, WebViewActivity.class);
+               /* Intent intent = new Intent( MainActivity.this, WebViewActivity.class);
               /*HOw to pass array infromation with intent*/
-                startActivity(intent);
+                  /*startActivity(intent);*/
 
 
             }
