@@ -18,7 +18,10 @@ List for the different type of data
  */
 
 
-public class Building {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Building implements Parcelable {
 
     private String ID;
     private String name;
@@ -31,6 +34,45 @@ public class Building {
     private Auxdata auxdata;
 
 
+    protected Building(Parcel in) {
+        ID = in.readString();
+        name = in.readString();
+        type = in.readString();
+        company = in.readString();
+        location = in.readString();
+        category = in.readString();
+        size = in.readInt();
+        cost = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(ID);
+        dest.writeString(name);
+        dest.writeString(type);
+        dest.writeString(company);
+        dest.writeString(location);
+        dest.writeString(category);
+        dest.writeInt(size);
+        dest.writeInt(cost);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Building> CREATOR = new Creator<Building>() {
+        @Override
+        public Building createFromParcel(Parcel in) {
+            return new Building(in);
+        }
+
+        @Override
+        public Building[] newArray(int size) {
+            return new Building[size];
+        }
+    };
 
     public Auxdata getAuxdata() {
         return auxdata;
