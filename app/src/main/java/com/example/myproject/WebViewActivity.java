@@ -1,5 +1,6 @@
 package com.example.myproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -18,7 +19,8 @@ public class WebViewActivity extends AppCompatActivity {
     private WebView copyright;
     private WebSettings photosettings;
     private WebSettings copysettings;
-
+    private String data;
+    private String ldata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +31,21 @@ public class WebViewActivity extends AppCompatActivity {
 
         athour = findViewById(R.id.photo);
         copyright = findViewById(R.id.license);
+        data ="";
+        ldata ="";
 
 
-
-
-
+        transfer();
         web();
+
 
     }
 
     public void transfer(){
-
+        Intent myintent =getIntent();
+        Auxdata copyright = (Auxdata) myintent.getParcelableExtra("keys");
+        data = copyright.getCopyright();
+        ldata = copyright.getLicense();
 
     }
     public void showExternalWebPage(int index){

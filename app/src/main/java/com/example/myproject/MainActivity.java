@@ -1,6 +1,7 @@
 package com.example.myproject;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView myImgView;
     private Button aboutButton;
     private Button webButton;
-
+    private  int activeBulding; //Created in varibal
 
 
     @Override
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         myImgView = findViewById(R.id.url_img);
         aboutButton = findViewById(R.id.open);
         webButton = findViewById(R.id.open_web);
-
+        activeBulding = 0; // Setting varibal to zero
 
 
 
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), buildingArrayList.get(position).info(),Toast.LENGTH_LONG).show();
             showImageView(position);
-
+            activeBulding = position;  //Tracks which building that is active from the array.
 
 
 
@@ -108,9 +109,10 @@ public class MainActivity extends AppCompatActivity {
         webButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* Intent intent = new Intent( MainActivity.this, WebViewActivity.class);
-              /*HOw to pass array infromation with intent*/
-                  /*startActivity(intent);*/
+                Auxdata copy = buildings[activeBulding].getAuxdata(); //Getting Auxdata from buildings that is currently displayed through the int varibal.
+                Intent myintent = new Intent( MainActivity.this, WebViewActivity.class);
+                myintent.putExtra("keys",copy);
+                startActivity(myintent);
 
 
             }
