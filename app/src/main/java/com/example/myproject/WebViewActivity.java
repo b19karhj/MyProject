@@ -2,7 +2,6 @@ package com.example.myproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -57,12 +56,7 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     private void web(){
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        close.setOnClickListener(v -> finish());
     }
 
 
